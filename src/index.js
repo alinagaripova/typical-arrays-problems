@@ -1,12 +1,24 @@
 
 exports.min = function min (array) {
-  return 0;
+    let minNumberInArray = Math.min.apply(null, array);
+    if (minNumberInArray == Infinity) {
+        minNumberInArray = 0;
+    }
+    return minNumberInArray
 }
 
 exports.max = function max (array) {
-  return 0;
+    let minNumberInArray = Math.max.apply(null, array);
+    if (minNumberInArray === -Infinity) {
+        minNumberInArray = 0;
+    }
+    return minNumberInArray
 }
 
 exports.avg = function avg (array) {
-  return 0;
+    if (array && array.length > 1) {
+        return array.reduce((a, b) => (a + b)) / array.length;
+    } else {
+        return 0;
+    }
 }
